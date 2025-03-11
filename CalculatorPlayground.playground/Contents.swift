@@ -1,4 +1,4 @@
-class addOperation {
+class AddOperation {
     func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
         return firstNumber + secondNumber
     }
@@ -23,7 +23,7 @@ class DivideOperation {
 }
 
 class Calculator {
-    let add = addOperation()
+    let add = AddOperation()
     let subtract = SubtractOperation()
     let multiply = MultiplyOperation()
     let divide = DivideOperation()
