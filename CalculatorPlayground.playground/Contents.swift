@@ -1,29 +1,41 @@
+class addOperation {
+    func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
+        return firstNumber + secondNumber
+    }
+}
+
+class SubtractOperation {
+    func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
+        return firstNumber - secondNumber
+    }
+}
+
+class MultiplyOperation {
+    func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
+        return firstNumber * secondNumber
+    }
+}
+
+class DivideOperation {
+    func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
+        return firstNumber / secondNumber
+    }
+}
+
 class Calculator {
-    func add(_ a: Int, _ b: Int) -> Int {
-        return a + b
-    }
+    let add = addOperation()
+    let subtract = SubtractOperation()
+    let multiply = MultiplyOperation()
+    let divide = DivideOperation()
     
-    func subtract(_ a: Int, _ b: Int) -> Int {
-        return a - b
-    }
-    
-    func multiply(_ a: Int, _ b: Int) -> Int {
-        return a * b
-    }
-    
-    func divide(_ a: Int, _ b: Int) -> Int {
-        return a / b
-    }
-    
-    func remainder(_ a: Int, _ b: Int) -> Int {
-        return a % b
+    func remainder(_ firstNumber: Int, _ secondNumber: Int) -> Int {
+        return firstNumber % secondNumber
     }
 }
 
 var question = Calculator()
 
-print(question.add(20, 49))
-print(question.subtract(230, 410))
-print(question.multiply(23, 132))
-print(question.divide(125, 5))
-print(question.remainder(53, 3))
+print(question.add.result(32, 32))
+print(question.subtract.result(239, 235))
+print(question.multiply.result(23, 53))
+print(question.divide.result(234, 34))
