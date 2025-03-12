@@ -33,10 +33,14 @@ class RemainderOperation: AbstractOperation {
 }
 
 class Calculator {
-    var operate: AbstractOperation
+    private var operate: AbstractOperation
     
     init(operate: AbstractOperation) {
         self.operate = operate
+    }
+    
+    func changeOperate(_ newOperate: AbstractOperation) {
+        self.operate = newOperate
     }
     
     func calculating(_ firstNumber: Int, _ secondNumber: Int) -> Int {
@@ -53,14 +57,14 @@ let remainder = RemainderOperation()
 var question = Calculator(operate: add)
 print(question.calculating(10, 20))
 
-question.operate = subtract
+question.changeOperate(subtract)
 print(question.calculating(10, 20))
 
-question.operate = multiply
+question.changeOperate(multiply)
 print(question.calculating(10, 20))
 
-question.operate = divide
+question.changeOperate(divide)
 print(question.calculating(10, 20))
 
-question.operate = remainder
+question.changeOperate(remainder)
 print(question.calculating(10, 20))
