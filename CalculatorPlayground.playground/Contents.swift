@@ -24,7 +24,12 @@ class MultiplyOperation: AbstractOperation {
 
 class DivideOperation: AbstractOperation {
     func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
-        return firstNumber / secondNumber
+        if secondNumber != 0 {
+            return firstNumber / secondNumber
+        } else {
+            print("0으로 나눌 수 없습니다. ")
+            return Int.min
+        }
     }
 }
 
@@ -63,7 +68,7 @@ let remainder = RemainderOperation()
 var question = Calculator(operate: add)
 print(question.calculating(10, 20))
 
-// 다른 식을 사용하려면 changeOperate 메서드를 사용해야 함
+// 다른 연산을 사용하려면 changeOperate 메서드를 사용해야 함
 question.changeOperate(subtract)
 print(question.calculating(10, 20))
 
