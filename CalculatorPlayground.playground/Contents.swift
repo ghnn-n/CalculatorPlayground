@@ -35,7 +35,12 @@ class DivideOperation: AbstractOperation {
 
 class RemainderOperation: AbstractOperation {
     func result(_ firstNumber: Int, _ secondNumber: Int) -> Int {
-        return firstNumber % secondNumber
+        if secondNumber != 0 {
+            return firstNumber % secondNumber
+        } else {
+            print("0으로 나눌 수 없습니다. ")
+            return Int.min
+        }
     }
 }
 
