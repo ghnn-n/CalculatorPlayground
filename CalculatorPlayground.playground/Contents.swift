@@ -5,7 +5,7 @@ let add = AddOperation()
 let subtract = SubtractOperation()
 let multiply = MultiplyOperation()
 let divide = DivideOperation()
-let remainder = RemainderOperation()
+let modulo = ModuloOperation()
 
 // 메인 클래스의 인스턴스 생성 및 구동
 var question = Calculator(operate: add)
@@ -21,5 +21,5 @@ print(question.calculating(10, 20))
 question.changeOperate(divide)
 print(question.calculating(10, 20))
 
-question.changeOperate(remainder)
+question.changeOperate(modulo)
 print(question.calculating(10, 20))

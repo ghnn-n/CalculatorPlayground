@@ -18,7 +18,15 @@ public class Calculator {
     }
     
     // 각각 operator의 해당하는 계산을 해줄 메서드
-    public func calculating(_ firstNumber: Int, _ secondNumber: Int) -> Int {
+    public func calculating(_ firstNumber: Double, _ secondNumber: Double) -> Double {
         operate.result(firstNumber, secondNumber)
     }
+}
+
+enum OperationType {
+    case add
+    case sub
+    case mul
+    case div
+    case mod
 }
