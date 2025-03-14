@@ -1,3 +1,5 @@
+import Foundation
+
 // 추상화된 프로토콜 생성
 public protocol AbstractOperation {
     func result(_ firstNumber: Double, _ secondNumber: Double) -> Double
@@ -39,10 +41,13 @@ public class DivideOperation: AbstractOperation {
 public class ModuloOperation: AbstractOperation {
     public init() {}
     public func result(_ firstNumber: Double, _ secondNumber: Double) -> Double {
-        if secondNumber != 0 {
-            return firstNumber.remainder(dividingBy: secondNumber)
-        } else {
+        if secondNumber == 0 {
             fatalError("0으로 나눌 수 없습니다. ")
+        } else if (firstNumber - round(firstNumber) != 0) ||
+                    (secondNumber - round(secondNumber) != 0) {
+            fatalError("나머지 연산은 정수만 입력 가능합니다. ")
+        } else {
+            return firstNumber.remainder(dividingBy: secondNumber)
         }
     }
 }
