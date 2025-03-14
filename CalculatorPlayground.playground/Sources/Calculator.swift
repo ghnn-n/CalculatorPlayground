@@ -22,11 +22,3 @@ public class Calculator {
         operate.result(firstNumber, secondNumber)
     }
 }
-
-enum OperationType {
-    case add
-    case sub
-    case mul
-    case div
-    case mod
-}
